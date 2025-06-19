@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart AI Chatbot</title>
+    <style>
+        body { font-family: Arial; background-color: #f3f3f3; padding: 20px; }
+        .chat-box { background: #fff; padding: 20px; border-radius: 10px; width: 60%; margin: auto; box-shadow: 0 0 10px #ccc; }
+        input[type=text] { width: 80%; padding: 10px; font-size: 16px; }
+        input[type=submit] { padding: 10px 20px; font-size: 16px; }
+        .response { margin-top: 20px; background: #e8f0fe; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="chat-box">
+        <h2>Ask the AI</h2>
+        <form method="POST">
+            <input type="text" name="question" placeholder="Ask something..." required>
+            <input type="submit" value="Ask">
+        </form>
+        {% if response %}
+        <div class="response">
+            <strong>AI:</strong> {{ response|safe }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
